@@ -1,12 +1,32 @@
-const mysql = require('mysql2/promise');
-require('dotenv').config();
+// const mysql = require('mysql2/promise');
+// require('dotenv').config();
+
+// const pool = mysql.createPool({
+//   host: process.env.DB_HOST || 'localhost',
+//   port: parseInt(process.env.DB_PORT) || 3306,
+//   database: process.env.DB_NAME || 'alumni_db',
+//   user: process.env.DB_USER || 'root',
+//   password: process.env.DB_PASSWORD || '3092',
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+// });
+
+const mysql = require("mysql2/promise");
+require("dotenv").config();
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT) || 3306,
-  database: process.env.DB_NAME || 'alumni_db',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '3092',
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+
+  ssl: {
+    minVersion: "TLSv1.2",
+    rejectUnauthorized: true,
+  },
+
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

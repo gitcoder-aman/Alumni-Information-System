@@ -19,7 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve React production build
-const reactDist = path.join(__dirname, 'frontend', 'dist');
+// const reactDist = path.join(__dirname, 'frontend', 'dist');
+const reactDist = path.join(__dirname, '..', 'frontend', 'dist');
 const fs = require('fs');
 if (fs.existsSync(reactDist)) {
   app.use(express.static(reactDist));
