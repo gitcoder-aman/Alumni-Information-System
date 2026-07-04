@@ -2,6 +2,8 @@
 
 > A full-stack web application to connect alumni, students, and administrators — built with **Node.js + Express + MySQL** on the backend and **React + Vite** on the frontend.
 
+deploye on render and database TiDB (for mysql)
+live (backend + frontend) -> https://alumni-information-system-backend.onrender.com/
 ---
 
 ## 📋 Table of Contents
